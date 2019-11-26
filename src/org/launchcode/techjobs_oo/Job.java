@@ -2,6 +2,7 @@ package org.launchcode.techjobs_oo;
 
 public class Job {
 
+    //Variables:
     private int id;
     private static int nextId = 1;
 
@@ -11,8 +12,22 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
-    // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
-    //  other five fields. The second constructor should also call the first in order to initialize
+
+    //Constructors:
+    public Job(int id) {
+        this.id = id;
+    }
+
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this.name = name;
+        this.employer = employer;
+        this.location = location;
+        this.positionType = positionType;
+        this.coreCompetency = coreCompetency;
+    }
+
+    // TODO: Add two constructors - one to initialize a unique ID ####DONE##### and a second to initialize the
+    //  other five fields. ####DONE#### The second constructor should also call the first in order to initialize
     //  the 'id' field.
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
