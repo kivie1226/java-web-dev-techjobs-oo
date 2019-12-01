@@ -29,8 +29,16 @@ public class JobTest {
        // assertEquals("Quality Control", testJob3.getPositionType().toString());
         assertEquals("Persistence", testJob3.getCoreCompetency().toString());
     }
+    //Checks that id's are different for each job, making all jobs be different:
     @Test
     public void testJobsForEquality() {
             assertFalse(testJob3.equals(testJob4));
+    }
+    //
+    @Test
+    public void toStringBlankLineTest() {
+            String[] toStringTestJob = Job.toString(testJob3).split("\n");
+            assertTrue(toStringTestJob[0].isBlank());
+         //   assertTrue(toStringTestJob[toStringTestJob.length-1].isBlank());
     }
 }

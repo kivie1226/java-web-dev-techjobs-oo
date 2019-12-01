@@ -75,6 +75,23 @@ public class Job {
     public int getId() {
         return id;
     }
+    //toString:
+
+    public static String toString(Job jobValues) {
+        int jobValuesId = jobValues.getId();
+        String jobValuesName = jobValues.getName();
+        String jobValuesEmployer = jobValues.getEmployer().toString();
+        String jobValuesLocation = jobValues.getLocation().toString();
+        String jobValuesPositionType = jobValues.getPositionType().toString();
+        String jobValuesCoreCompetency = jobValues.getCoreCompetency().toString();
+
+        if (jobValuesName =="" || jobValuesEmployer == "" || jobValuesLocation == "" || jobValuesPositionType == "" || jobValuesCoreCompetency == "") {
+            return "Data not available";
+        } else {
+            return ("\n ID: " + jobValuesId + "\n Name: " + jobValuesName + "\n Employer: " + jobValuesEmployer + "\n Location: " + jobValuesLocation + "\n Position Type: " + jobValuesPositionType + "\n Core Competency: " + jobValuesCoreCompetency);
+        }
+    }
+
 
     //Equals and hashCode methods:
 
