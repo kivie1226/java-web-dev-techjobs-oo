@@ -20,14 +20,15 @@ public class Job {
         nextId++;
     }
 
-
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
+
 
     //Getters and setters:
 
@@ -82,12 +83,18 @@ public class Job {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
-        return id == job.id;
+        return id == job.id &&
+                Objects.equals(name, job.name) &&
+                Objects.equals(employer, job.employer) &&
+                Objects.equals(location, job.location) &&
+                Objects.equals(positionType, job.positionType) &&
+                Objects.equals(coreCompetency, job.coreCompetency);
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
     }
 
 
