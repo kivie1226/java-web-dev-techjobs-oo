@@ -85,13 +85,20 @@ public class Job {
         String jobValuesPositionType = jobValues.getPositionType().toString();
         String jobValuesCoreCompetency = jobValues.getCoreCompetency().toString();
 
-        if (jobValuesName =="" && jobValuesEmployer == "" && jobValuesLocation == "" && jobValuesPositionType == "" && jobValuesCoreCompetency == "") {
+        if (jobValuesName == "" && jobValuesEmployer == "" && jobValuesLocation == "" && jobValuesPositionType == "" && jobValuesCoreCompetency == "") {
             return "OOPS! This job does not seem to exist.";
-        } else if (jobValuesName =="" || jobValuesEmployer == "" || jobValuesLocation == "" || jobValuesPositionType == "" || jobValuesCoreCompetency == "") {
-            return "Data not available";
-        } else {
-            return ("\n ID: " + jobValuesId + "\n Name: " + jobValuesName + "\n Employer: " + jobValuesEmployer + "\n Location: " + jobValuesLocation + "\n Position Type: " + jobValuesPositionType + "\n Core Competency: " + jobValuesCoreCompetency +"\n");
+        } if (jobValuesName == "") {
+            jobValuesName = "Data not available";
+        } if (jobValuesEmployer == "") {
+            jobValuesEmployer = "Data not available";
+        } if (jobValuesLocation == "") {
+            jobValuesLocation = "Data not available";
+        } if (jobValuesPositionType == "") {
+            jobValuesPositionType = "Data not available";
+        } if (jobValuesCoreCompetency == "") {
+            jobValuesCoreCompetency = "Data not available";
         }
+        return ("\n ID: " + jobValuesId + "\n Name: " + jobValuesName + "\n Employer: " + jobValuesEmployer + "\n Location: " + jobValuesLocation + "\n Position Type: " + jobValuesPositionType + "\n Core Competency: " + jobValuesCoreCompetency + "\n ");
     }
 
 

@@ -23,7 +23,7 @@ public class JobTest {
     //Making sure Job contains all 6 fields:
     @Test
     public void testJobConstructorSetsAllFields() {
-        assertEquals(3, testJob3.getId());
+        assertEquals(21, testJob3.getId());
         assertEquals("Product Tester", testJob3.getName());
         assertEquals("ACME", testJob3.getEmployer().toString());
         assertEquals("Desert", testJob3.getLocation().toString());
