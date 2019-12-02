@@ -40,7 +40,7 @@ public class JobTest {
     public void toStringBlankLineTest() {
         String[] toStringTestJob = Job.toString(testJob3).split("\n");
         assertTrue(toStringTestJob[0].isBlank());
-       // assertTrue(toStringTestJob[toStringTestJob.length-1].isBlank());
+        assertTrue(toStringTestJob[toStringTestJob.length-1].isBlank());
     }
     //Checks that each field returns the label and value:
     @Test
