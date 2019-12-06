@@ -11,9 +11,8 @@ public class JobTest {
     Job testJob2 = new Job();
     Job testJob3 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
     Job testJob4 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
-    Job testJob5 = new Job("Kim", new Employer("Walgreen"), new Location(""), new PositionType("ASM"), new CoreCompetency(""));
-    Job testJob6 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
-
+    Job testJob5 = new Job("Kim", new Employer("Walgreen"), new Location(), new PositionType("ASM"), new CoreCompetency());
+    Job testJob6 = new Job();
     //Making sure different Id's are assigned:
     @Test
     public void testSettingJobId() {
@@ -57,6 +56,7 @@ public class JobTest {
     @Test
     public void toStringLeftBlankResults() {
         String toStringBlankFieldsResults = Job.toString(testJob5);
+        System.out.println(Job.toString(testJob5));
         assertTrue(toStringBlankFieldsResults.contains("Data not available"));
     }
     //BONUS: Checks that method returns "OOPS!...." if all field are left blank:

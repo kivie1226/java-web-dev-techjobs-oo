@@ -78,6 +78,10 @@ public class Job {
     //toString:
 
     public static String toString(Job jobValues) {
+
+        if (jobValues.getName() == null && jobValues.getEmployer() == null && jobValues.getLocation() == null && jobValues.getPositionType() == null && jobValues.getCoreCompetency() == null) {
+            return "OOPS! This job does not seem to exist.";
+        }
         int jobValuesId = jobValues.getId();
         String jobValuesName = jobValues.getName();
         String jobValuesEmployer = jobValues.getEmployer().toString();
@@ -85,19 +89,18 @@ public class Job {
         String jobValuesPositionType = jobValues.getPositionType().toString();
         String jobValuesCoreCompetency = jobValues.getCoreCompetency().toString();
 
-        if (jobValuesName == "" && jobValuesEmployer == "" && jobValuesLocation == "" && jobValuesPositionType == "" && jobValuesCoreCompetency == "") {
-            return "OOPS! This job does not seem to exist.";
-        } if (jobValuesName == "") {
+        if (jobValuesName == null) {
             jobValuesName = "Data not available";
-        } if (jobValuesEmployer == "") {
+        } if (jobValuesEmployer == null) {
             jobValuesEmployer = "Data not available";
-        } if (jobValuesLocation == "") {
+        } if (jobValuesLocation == null) {
             jobValuesLocation = "Data not available";
-        } if (jobValuesPositionType == "") {
+        } if (jobValuesPositionType == null) {
             jobValuesPositionType = "Data not available";
-        } if (jobValuesCoreCompetency == "") {
+        } if (jobValuesCoreCompetency == null) {
             jobValuesCoreCompetency = "Data not available";
         }
+
         return ("\n ID: " + jobValuesId + "\n Name: " + jobValuesName + "\n Employer: " + jobValuesEmployer + "\n Location: " + jobValuesLocation + "\n Position Type: " + jobValuesPositionType + "\n Core Competency: " + jobValuesCoreCompetency + "\n ");
     }
 
